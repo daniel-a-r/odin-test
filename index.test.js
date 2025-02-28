@@ -32,125 +32,128 @@ describe('String reverse', () => {
   });
 });
 
-describe('Calculator add', () => {
-  test('add the same positive numbers', () => {
-    expect(f.calculator.add(1, 1)).toBe(2);
+describe('Calculator', () => {
+  describe('add', () => {
+    test('add the same positive numbers', () => {
+      expect(f.calculator.add(1, 1)).toBe(2);
+    });
+  
+    test('add two different positive numbers', () => {
+      expect(f.calculator.add(1, 2)).toBe(3);
+    });
+  
+    test('add a positive and zero', () => {
+      expect(f.calculator.add(0, 3)).toBe(3);
+    });
+  
+    test('add two zeros', () => {
+      expect(f.calculator.add(0, 0)).toBe(0);
+    });
+  
+    test('add a positive and negative', () => {
+      expect(f.calculator.add(-1, 1)).toBe(0);
+    });
+  
+    test('add two negative numbers', () => {
+      expect(f.calculator.add(-1, -1)).toBe(-2);
+    });
+  
+    test('add a negative and zero', () => {
+      expect(f.calculator.add(-1, 0)).toBe(-1);
+    });
   });
-
-  test('add two different positive numbers', () => {
-    expect(f.calculator.add(1, 2)).toBe(3);
+  
+  describe('subtract', () => {
+    test('subtract the same positive numbers', () => {
+      expect(f.calculator.subtract(1, 1)).toBe(0);
+    });
+  
+    test('subtract two different positive numbers', () => {
+      expect(f.calculator.subtract(1, 2)).toBe(-1);
+    });
+  
+    test('subtract a positive and zero', () => {
+      expect(f.calculator.subtract(0, 3)).toBe(-3);
+    });
+  
+    test('subtract two zeros', () => {
+      expect(f.calculator.subtract(0, 0)).toBe(0);
+    });
+  
+    test('subtract a positive and negative', () => {
+      expect(f.calculator.subtract(-1, 1)).toBe(-2);
+    });
+  
+    test('subtract two negative numbers', () => {
+      expect(f.calculator.subtract(-1, -1)).toBe(0);
+    });
+  
+    test('subtract a negative and zero', () => {
+      expect(f.calculator.subtract(-1, 0)).toBe(-1);
+    });
   });
-
-  test('add a positive and zero', () => {
-    expect(f.calculator.add(0, 3)).toBe(3);
+  
+  describe('multiply', () => {
+    test('multiply the same positive numbers', () => {
+      expect(f.calculator.multiply(1, 1)).toBe(1);
+    });
+  
+    test('multiply two different positive numbers', () => {
+      expect(f.calculator.multiply(1, 2)).toBe(2);
+    });
+  
+    test('multiply a positive and zero', () => {
+      expect(f.calculator.multiply(0, 3)).toBe(0);
+    });
+  
+    test('multiply two zeros', () => {
+      expect(f.calculator.multiply(0, 0)).toBe(0);
+    });
+  
+    test('multiply a positive and negative', () => {
+      expect(f.calculator.multiply(-1, 1)).toBe(-1);
+    });
+  
+    test('multiply two negative numbers', () => {
+      expect(f.calculator.multiply(-1, -1)).toBe(1);
+    });
+  
+    test('multiply a negative and zero', () => {
+      expect(f.calculator.multiply(-1, 0)).toBe(0);
+    });
   });
-
-  test('add two zeros', () => {
-    expect(f.calculator.add(0, 0)).toBe(0);
-  });
-
-  test('add a positive and negative', () => {
-    expect(f.calculator.add(-1, 1)).toBe(0);
-  });
-
-  test('add two negative numbers', () => {
-    expect(f.calculator.add(-1, -1)).toBe(-2);
-  });
-
-  test('add a negative and zero', () => {
-    expect(f.calculator.add(-1, 0)).toBe(-1);
+  
+  describe('divide', () => {
+    test('divide the same positive numbers', () => {
+      expect(f.calculator.divide(1, 1)).toBe(1);
+    });
+  
+    test('divide two different positive numbers', () => {
+      expect(f.calculator.divide(1, 2)).toBe(0.5);
+    });
+  
+    test('divide zero by a positive', () => {
+      expect(f.calculator.divide(0, 3)).toBe(0);
+    });
+  
+    test('divide two zeros', () => {
+      expect(f.calculator.divide(0, 0)).toBeNaN();
+    });
+  
+    test('divide a positive and negative', () => {
+      expect(f.calculator.divide(-1, 1)).toBe(-1);
+    });
+  
+    test('divide two negative numbers', () => {
+      expect(f.calculator.divide(-1, -1)).toBe(1);
+    });
+  
+    test('divide zero by a negative', () => {
+      expect(f.calculator.divide(0, -1)).toBe(0);
+    });
   });
 });
 
-describe('Calculator subtract', () => {
-  test('subtract the same positive numbers', () => {
-    expect(f.calculator.subtract(1, 1)).toBe(0);
-  });
-
-  test('subtract two different positive numbers', () => {
-    expect(f.calculator.subtract(1, 2)).toBe(-1);
-  });
-
-  test('subtract a positive and zero', () => {
-    expect(f.calculator.subtract(0, 3)).toBe(-3);
-  });
-
-  test('subtract two zeros', () => {
-    expect(f.calculator.subtract(0, 0)).toBe(0);
-  });
-
-  test('subtract a positive and negative', () => {
-    expect(f.calculator.subtract(-1, 1)).toBe(-2);
-  });
-
-  test('subtract two negative numbers', () => {
-    expect(f.calculator.subtract(-1, -1)).toBe(0);
-  });
-
-  test('subtract a negative and zero', () => {
-    expect(f.calculator.subtract(-1, 0)).toBe(-1);
-  });
-});
-
-describe('Calculator multiply', () => {
-  test('multiply the same positive numbers', () => {
-    expect(f.calculator.multiply(1, 1)).toBe(1);
-  });
-
-  test('multiply two different positive numbers', () => {
-    expect(f.calculator.multiply(1, 2)).toBe(2);
-  });
-
-  test('multiply a positive and zero', () => {
-    expect(f.calculator.multiply(0, 3)).toBe(0);
-  });
-
-  test('multiply two zeros', () => {
-    expect(f.calculator.multiply(0, 0)).toBe(0);
-  });
-
-  test('multiply a positive and negative', () => {
-    expect(f.calculator.multiply(-1, 1)).toBe(-1);
-  });
-
-  test('multiply two negative numbers', () => {
-    expect(f.calculator.multiply(-1, -1)).toBe(1);
-  });
-
-  test('multiply a negative and zero', () => {
-    expect(f.calculator.multiply(-1, 0)).toBe(0);
-  });
-});
-
-describe('Calculator divide', () => {
-  test('divide the same positive numbers', () => {
-    expect(f.calculator.divide(1, 1)).toBe(1);
-  });
-
-  test('divide two different positive numbers', () => {
-    expect(f.calculator.divide(1, 2)).toBe(0.5);
-  });
-
-  test('divide zero by a positive', () => {
-    expect(f.calculator.divide(0, 3)).toBe(0);
-  });
-
-  test('divide two zeros', () => {
-    expect(f.calculator.divide(0, 0)).toBeNaN();
-  });
-
-  test('divide a positive and negative', () => {
-    expect(f.calculator.divide(-1, 1)).toBe(-1);
-  });
-
-  test('divide two negative numbers', () => {
-    expect(f.calculator.divide(-1, -1)).toBe(1);
-  });
-
-  test('divide zero by a negative', () => {
-    expect(f.calculator.divide(0, -1)).toBe(0);
-  });
-});
 
 describe('ceasar cipher', () => {
   test('start of alphabet, lowercase', () => {
